@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapp2">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -12,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp2">
         <activity
+            android:launchMode="singleTop"
             android:name=".HelpActivity"
             android:exported="false"
             android:theme="@style/Theme.MyApp2.NoActionBar" />
@@ -22,16 +24,19 @@
             android:exported="true" />
 
         <activity
+            android:launchMode="singleTop"
             android:name=".broadcast.BroadcastActivity"
             android:exported="false"
             android:label="Broadcast activity"
             android:theme="@style/Theme.MyApp2.NoActionBar" />
         <activity
+            android:launchMode="singleTop"
             android:name=".async.AsyncTaskLoaderActivity"
             android:exported="false"
             android:label="Async activity"
             android:theme="@style/Theme.MyApp2.NoActionBar" />
         <activity
+            android:launchMode="singleTop"
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
