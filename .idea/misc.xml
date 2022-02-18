@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1705" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/drawable/side_nav_bar.xml" value="0.1225" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/activity_async_task_loader.xml" value="0.264" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/activity_async_task_loader2.xml" value="0.15104166666666666" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/activity_b.xml" value="0.12" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/activity_broadcast.xml" value="0.12685185185185185" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/activity_help.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/app_bar_broadcast.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/app_bar_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/content_b.xml" value="0.11145833333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/content_broadcast.xml" value="0.1953125" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/content_main.xml" value="0.264" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/content_nav.xml" value="0.1953125" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/fragment_async.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/fragment_async_task.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/fragment_broadcast.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/fragment_gallery.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/fragment_help.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/fragment_slideshow.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/layout/nav_header_main.xml" value="0.21510416666666668" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/menu/activity_main_drawer.xml" value="0.25025641025641027" />
+        <entry key="..\:/Users/Lenovo/Downloads/MyApp2/app/src/main/res/menu/main.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

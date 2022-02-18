@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.myapp2.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <activity
+        android:id="@+id/nav_asyncTask"
+        android:name="com.example.myapp2.async.AsyncTaskLoaderActivity"
+        android:label="fragment_async_task"
+        tools:layout="@layout/activity_async_task_loader" />
+
+    <activity
+        android:id="@+id/nav_broadcast"
+        android:name="com.example.myapp2.broadcast.BroadcastActivity"
+        android:label="fragment_broadcast"
+        tools:layout="@layout/activity_broadcast" />
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.example.myapp2.HelpActivity"
+        android:label="fragment_help"
+        tools:layout="@layout/activity_help" />
+
+</navigation>
