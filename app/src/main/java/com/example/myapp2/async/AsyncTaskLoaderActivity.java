@@ -1,54 +1,51 @@
 package com.example.myapp2.async;
 
-import android.app.ActionBar;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
+import androidx.viewbinding.ViewBinding;
 
+import com.example.myapp2.BaseActivity;
 import com.example.myapp2.R;
+import com.example.myapp2.databinding.ActivityAsyncTaskLoaderBinding;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class AsyncTaskLoaderActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
+public class AsyncTaskLoaderActivity extends BaseActivity implements LoaderManager.LoaderCallbacks<String> {
 
-    private EditText mSongInput;
-    private TextView mTitle;
-    private TextView mAuthor;
+    @Override
+    protected int currentId() {
+        return R.id.nav_asyncTask;
+    }
+
+    private ActivityAsyncTaskLoaderBinding binding;
+
+    @Override
+    protected ViewBinding binding() {
+        return binding;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        binding = ActivityAsyncTaskLoaderBinding.inflate(getLayoutInflater());
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_async_task_loader);
-
-//        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        View contentView = inflater.inflate(R.layout.activity_async_task_loader, null);
-//        addContentView(contentView, new ActionBar.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT));
-
-
-        mSongInput = (EditText) findViewById(R.id.songInput);
-        mTitle = (TextView) findViewById(R.id.titleText);
-        mAuthor = (TextView) findViewById(R.id.authorText);
 
         if (getSupportLoaderManager().getLoader(0) != null)
             getSupportLoaderManager().initLoader(0, null, this);
     }
 
     public void searchBooks(View view) {
-        String query = mSongInput.getText().toString();
+        String query = binding.songInput.getText().toString();
 
         //to hide the keyboard when the button is pressed
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -66,15 +63,15 @@ public class AsyncTaskLoaderActivity extends AppCompatActivity implements Loader
             queryBundle.putString("query", query);
             getSupportLoaderManager().restartLoader(0, queryBundle, this);
 
-            mAuthor.setText("");
-            mTitle.setText("loading");
+            binding.authorText.setText("");
+            binding.titleText.setText("loading");
         } else {
             if (query.length() == 0) {
-                mAuthor.setText("");
-                mTitle.setText("Your query has no results");
+                binding.authorText.setText("");
+                binding.titleText.setText("Your query has no results");
             } else {
-                mAuthor.setText("");
-                mTitle.setText("No network");
+                binding.authorText.setText("");
+                binding.titleText.setText("No network");
             }
         }
 
@@ -126,20 +123,20 @@ public class AsyncTaskLoaderActivity extends AppCompatActivity implements Loader
 
             // If both are found, display the result.
             if (title != null && authors != null) {
-                mTitle.setText(title);
-                mAuthor.setText(authors);
+                binding.titleText.setText(title);
+                binding.authorText.setText(authors);
                 //mBookInput.setText("");
             } else {
                 // If none are found, update the UI to show failed results.
-                mTitle.setText(R.string.no_results);
-                mAuthor.setText("");
+                binding.titleText.setText(R.string.no_results);
+                binding.authorText.setText("");
             }
 
         } catch (Exception e) {
             // If onPostExecute does not receive a proper JSON string,
             // update the UI to show failed results.
-            mTitle.setText(R.string.no_results);
-            mAuthor.setText("");
+            binding.titleText.setText(R.string.no_results);
+            binding.authorText.setText("");
             e.printStackTrace();
         }
 

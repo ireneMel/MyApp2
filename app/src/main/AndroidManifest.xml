@@ -13,7 +13,8 @@
         android:theme="@style/Theme.MyApp2">
         <activity
             android:name=".HelpActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MyApp2.NoActionBar" />
 
         <receiver
             android:name=".broadcast.MyBroadcastReceiver"
@@ -28,7 +29,8 @@
         <activity
             android:name=".async.AsyncTaskLoaderActivity"
             android:exported="false"
-            android:label="Async activity" />
+            android:label="Async activity"
+            android:theme="@style/Theme.MyApp2.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

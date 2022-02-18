@@ -1,14 +1,17 @@
 package com.example.myapp2;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewbinding.ViewBinding;
 
-import android.os.Bundle;
+import com.example.myapp2.databinding.ActivityHelpBinding;
 
-public class HelpActivity extends AppCompatActivity {
+public class HelpActivity extends BaseActivity {
+    @Override
+    protected int currentId() {
+        return R.id.nav_help;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help);
+    protected ViewBinding binding() {
+        return ActivityHelpBinding.inflate(getLayoutInflater());
     }
 }

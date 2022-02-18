@@ -1,0 +1,71 @@
+package com.example.myapp2;
+
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.annotation.IdRes;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewbinding.ViewBinding;
+
+import com.example.myapp2.async.AsyncTaskLoaderActivity;
+import com.example.myapp2.broadcast.BroadcastActivity;
+import com.example.myapp2.databinding.ActivityBroadcastBinding;
+
+public abstract class BaseActivity extends AppCompatActivity {
+    private ActivityBroadcastBinding binding;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        binding = ActivityBroadcastBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        binding.include.addView(binding().getRoot());
+
+        setSupportActionBar(binding.toolbar);
+
+        DrawerLayout drawer = binding.drawerLayoutBroadcast;
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawer, binding.toolbar, R.string.broadcast, R.string.action_settings);
+        drawer.setDrawerListener(actionBarDrawerToggle);
+        drawer.post(actionBarDrawerToggle::syncState);
+
+        binding.navView.setNavigationItemSelectedListener(item -> {
+            onNavigationSelect(item.getItemId(), drawer);
+            return true;
+        });
+    }
+
+    private void onNavigationSelect(@IdRes int id, DrawerLayout drawer) {
+        if (id == currentId()) {
+            drawer.close();
+        } else {
+            Intent intent;
+            switch (id) {
+                case R.id.nav_home:
+                    intent = new Intent(this, MainActivity.class);
+                    break;
+                case R.id.nav_help:
+                    intent = new Intent(this, HelpActivity.class);
+                    break;
+                case R.id.nav_asyncTask:
+                    intent = new Intent(this, AsyncTaskLoaderActivity.class);
+                    break;
+                case R.id.nav_broadcast:
+                    intent = new Intent(this, BroadcastActivity.class);
+                    break;
+                default:
+                    throw new IllegalStateException("Undefined resource");
+            }
+            startActivity(intent);
+        }
+    }
+
+    protected abstract @IdRes
+    int currentId();
+
+    protected abstract ViewBinding binding();
+}
