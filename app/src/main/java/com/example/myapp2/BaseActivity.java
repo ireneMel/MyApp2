@@ -12,16 +12,16 @@ import androidx.viewbinding.ViewBinding;
 
 import com.example.myapp2.async.AsyncTaskLoaderActivity;
 import com.example.myapp2.broadcast.BroadcastActivity;
-import com.example.myapp2.databinding.ActivityBroadcastBinding;
+import com.example.myapp2.databinding.ActivityBaseBinding;
 
 public abstract class BaseActivity extends AppCompatActivity {
-    private ActivityBroadcastBinding binding;
+    private ActivityBaseBinding binding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityBroadcastBinding.inflate(getLayoutInflater());
+        binding = ActivityBaseBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.include.addView(binding().getRoot());
