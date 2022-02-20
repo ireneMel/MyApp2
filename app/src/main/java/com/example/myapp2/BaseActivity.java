@@ -81,7 +81,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        startActivity(new Intent(this,HelpActivity.class));
+        startActivity(new Intent(this, HelpActivity.class));
         return super.onOptionsItemSelected(item);
     }
 }
