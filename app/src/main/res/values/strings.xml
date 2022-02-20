@@ -20,4 +20,6 @@
     <string name="no_results">No results</string>
     <string name="author_email">iryna2.melnyk@ukma.edu.ua</string>
     <string name="title_activity_nav">NavActivity</string>
+    <string name="search">search</string>
+    <string name="hint_async">Enter a name of a book</string>
 </resources>
